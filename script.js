@@ -13,7 +13,7 @@ let score = 30;
 let winnerScore = 0;
 
 function guessNumber(){
-    check.addEventListener('click',()=>{
+    check.addEventListener('click',(e)=>{
         console.log('click')
         if(!Number(guess.value)){
             message.textContent = "Sorry, try again"
@@ -48,3 +48,15 @@ function stopScore(){
     }
 }
  stopScore()
+
+ function tryAgain(){
+    again.addEventListener('click',(e)=>{
+        message.textContent = "Start guessing...";
+        newScore.textContent = 30;
+        highScore.textContent = 0;
+        body.style.backgroundColor = " #575454";
+        guess.value = "";
+    })
+ }
+
+ tryAgain()
